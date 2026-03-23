@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# oc_mse
+# ocmse
 
 A package to estimate overcoverage on register based data considering
 Multiple System Estimation (MSE) models, based on the package `conting`.
@@ -29,7 +29,7 @@ After installing `conting`, you can install our package, also using
 `devtools` with the following lines
 
 ``` r
-devtools::install_github("brsantos/oc_mse")
+devtools::install_github("brsantos/ocmse")
 ```
 
 ## Creating a population
@@ -69,7 +69,7 @@ but this can be changed.
 ``` r
 set.seed(42)
 
-library(oc_mse)
+library(ocmse)
 
 main_pop <- create_population(
    size = 2e5,
@@ -419,7 +419,7 @@ Bayesian model with
 
 ``` r
 # this might take a few minutes to run.
-model <- oc_mse::oc_model(
+model <- ocmse::oc_model(
       model_formula = count ~ sex * l1 + 
         higher_educated * l2 + scaled_income_fct * l3 + age_groups,
       freq_table = cont_table,

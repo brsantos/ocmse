@@ -1,4 +1,4 @@
-Package: oc_mse
+Package: ocmse
 Type: Package
 Title: Over-coverage estimate based on MSE models
 Version: 0.1.0
@@ -14,7 +14,7 @@ Imports:
     conting (>= 1.7),
     tseries
 RoxygenNote: 7.2.3
-URL: https://brsantos.github.io/oc_mse/
+URL: https://brsantos.github.io/ocmse/
 Remotes: 
     cran/conting
 Config/Needs/website: rmarkdown
