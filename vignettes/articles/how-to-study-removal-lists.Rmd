@@ -8,9 +8,11 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-knitr::opts_knit$set(
-  root.dir = rprojroot::find_root(rprojroot::has_file("DESCRIPTION"))
-)
+if (requireNamespace("rprojroot", quietly = TRUE)) {
+  knitr::opts_knit$set(
+    root.dir = rprojroot::find_root(rprojroot::has_file("DESCRIPTION"))
+  )
+}
 ```
 
 In the electronic supplementary material of our paper, there is a simulation study where we discussed the different effects when removing registers in the estimation of our model. The link and the info for the paper follows:
@@ -121,8 +123,7 @@ model <- ocmse::oc_model(
 Given this model, we can estimate our over-coverage as
 
 ```{r, echo=FALSE}
-library(dplyr)
-model <- readRDS("inst/example/vignette1.rds")
+model <- readRDS(system.file("example/vignette1.rds", package = "ocmse"))
 ```
 
 ```{r}
@@ -176,7 +177,7 @@ model_x <- ocmse::oc_model(
 ```
 
 ```{r, echo=FALSE}
-oc_estimates <- readRDS("inst/example/vignette2.rds")
+oc_estimates <- readRDS(system.file("example/vignette2.rds", package = "ocmse"))
 model_x <- as.data.frame(oc_estimates)
 ```
 
