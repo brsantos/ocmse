@@ -13,8 +13,15 @@ LazyData: true
 Imports: 
     conting (>= 1.7),
     tseries
+Suggests:
+    dplyr,
+    ggplot2,
+    knitr,
+    rmarkdown,
+    rprojroot
 RoxygenNote: 7.2.3
 URL: https://brsantos.github.io/ocmse/
 Remotes: 
     cran/conting
-Config/Needs/website: rmarkdown
+Config/Needs/website: rmarkdown, knitr, dplyr, ggplot2, rprojroot
+VignetteBuilder: knitr
